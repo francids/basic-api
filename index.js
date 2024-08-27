@@ -1,5 +1,5 @@
 import express from 'express';
-import mainRoutes from './routes/mainRoutes.js';
+import router from './routes/router.js';
 import config from './config/config.js';
 import logger from './middlewares/logger.js';
 
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(logger);
 
 // Routes
-app.use('/', mainRoutes);
+app.use('/', router);
 
 // Server listening
 app.listen(port, () => {
