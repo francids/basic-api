@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "node --watch index.js"
+    "dev": "node --watch index.js",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\""
   },
   "dependencies": {
     "express": "^4.19.2"
