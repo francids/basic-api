@@ -1,6 +1,6 @@
 import express from 'express';
-import { getRoot, getPong } from '../controllers/main-controller.js';
-import { getUsers, getUserById } from '../controllers/users-controller.js';
+import { getRoot, getPong } from '../controllers/main-controller';
+import { getUsers, getUserById } from '../controllers/users-controller';
 
 const router = express.Router();
 

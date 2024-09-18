@@ -1,7 +1,7 @@
 import express from 'express';
-import router from './routes/router.js';
-import config from './config/config.js';
-import logger from './middlewares/logger.js';
+import router from './routes/router';
+import config from './config/config';
+import logger from './middlewares/logger';
 
 const app = express();
 const port = config.port;
