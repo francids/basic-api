@@ -1,6 +1,6 @@
 # Basic API
 
-A basic REST API built with Express.js.
+A basic REST API built with Hono.
 
 ## Installation
 

@@ -1,12 +1,8 @@
-import express from 'express';
-import { getRoot, getPong } from '../controllers/main-controller';
-import { getUsers, getUserById } from '../controllers/users-controller';
+import { Hono } from 'hono';
+import { users } from '../controllers/users';
 
-const router = express.Router();
+export const router = new Hono();
 
-router.get('/', getRoot);
-router.get('/ping', getPong);
-router.get("/users", getUsers);
-router.get("/users/:id", getUserById);
-
-export default router;
+router.get('/', (c) => c.json({ msg: 'Hi!' }));
+router.get('/ping', (c) => c.json({ msg: 'pong' }));
+router.route("/", users);

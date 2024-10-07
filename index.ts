@@ -1,21 +1,18 @@
-import express from 'express';
-import router from './routes/router';
+import { Hono } from 'hono';
+import { logger } from 'hono/logger';
+import { router } from './routes/router';
+import { serve } from '@hono/node-server';
 import config from './config/config';
-import logger from './middlewares/logger';
 
-const app = express();
-const port = config.port;
+const app = new Hono();
 
-// Middlewares
-app.use(express.json());
-app.use(logger);
+app.use(logger());
 
-// Routes
-app.use('/', router);
+app.route('/', router);
 
-// Server listening
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+serve({
+  fetch: app.fetch,
+  port: config.port,
 });
 
 export default app;
