@@ -1,6 +1,6 @@
 # Basic API
 
-A basic REST API built with Hono.
+A basic REST API built with [Hono](https://hono.dev/).
 
 ## Getting Started
 
